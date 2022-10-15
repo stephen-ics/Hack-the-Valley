@@ -8,7 +8,7 @@ import Post from './pages/Post'
 import Emergency from './pages/Emergency'
 import Records from './pages/Records'
 import Certifications from './pages/Certifications'
-
+import Login from './pages/Login'
 
 function App() {
  return (
@@ -24,6 +24,7 @@ function App() {
               <Route path="/emergency" exact element={<Emergency />} />
               <Route path="/records" exact element={<Records />} />
               <Route path="/certifications" exact element={<Certifications />} />
+              <Route path="/login" exact element={<Login/>} />
             </Routes>
          </AnimatePresence>
        </Suspense>
