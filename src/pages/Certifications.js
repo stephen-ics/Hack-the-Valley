@@ -1,8 +1,11 @@
 import React from 'react'
+import Certificate from '../components/Certificate'
 
 const Certifications = () => {
   return (
-    <div>Certifications</div>
+    <div>
+        <Certificate />
+    </div>
   )
 }
 
