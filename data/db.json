@@ -1,0 +1,34 @@
+{
+    "RecordHistory": [
+        {
+            "title": "Heart Attack",
+            "date": "2020-05-07",
+            "image": "../images/health.jpeg",
+            "id": "heart-attack"
+        },
+        {
+            "title": "Asthma Attack",
+            "date": "2021-05-11",
+            "image": "../images/health.jpeg",
+            "id": "heart-attack"
+        },
+        {
+            "title": "Heart Attack",
+            "date": "2021-06-23",
+            "image": "../images/health.jpeg",
+            "id": "heart-attack"
+        },
+        {
+            "title": "Stroke",
+            "date": "2022-07-07",
+            "image": "../images/health.jpeg",
+            "id": "heart-attack"
+        },
+        {
+            "title": "Cardiac arrest",
+            "date": "2022-09-30",
+            "image": "../images/health.jpeg",
+            "id": "heart-attack"
+        }
+    ]
+}

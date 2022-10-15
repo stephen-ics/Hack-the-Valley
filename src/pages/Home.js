@@ -1,5 +1,5 @@
 import React from 'react'
-import red from '../videos/Red.mp4'
+import red from '../videos/R.mp4'
 import {motion} from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 
