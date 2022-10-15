@@ -1,8 +1,11 @@
 import React from 'react'
+import EmergencySection from '../components/EmergencySection'
 
 const Emergency = () => {
   return (
-    <div>Emergency</div>
+    <div className=''>
+      <EmergencySection />
+    </div>
   )
 }
 

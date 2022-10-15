@@ -11,7 +11,7 @@ const Post = () => {
   const [showCertifications, setShowCertifications] = useState(false);
 
   return (
-    <div className=''>
+    <div className='bg-red-200 p-10'>
       <div className='flex justify-evenly mt-24 mb-24 text-white'>
         <button className='w-1/4 h-20 px-8 bg-red-800' onClick={() => {
           setShowRecords(true)
