@@ -22,7 +22,7 @@ const Post = () => {
       </div>
       
     {showRecords &&  <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-center text-gray-700">Submit a Record</h1>
+          <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Record</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
               onSubmit={onSubmit}
@@ -73,7 +73,7 @@ const Post = () => {
     </div>}
 
     {showCertifications &&  <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-center text-gray-700">Submit a Certificate</h1>
+          <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Certificate</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
               onSubmit={onSubmit}
