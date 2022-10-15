@@ -11,11 +11,17 @@ import {
  
 const links = [
     {
-        name: "Discussion",
-        link: "/discussion",
-        id: "discussion",
+        name: "Post",
+        link: "/post",
+        id: "post",
         priority: false
     },
+    {
+        name: "Emergency",
+        link: "/emergency",
+        id: "emergency",
+        priority: false
+     },
     {
        name: "Records",
        link: "/records",

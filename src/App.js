@@ -4,7 +4,8 @@ import { AnimatePresence } from 'framer-motion'
  
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import Discussion from './pages/Discussion'
+import Post from './pages/Post'
+import Emergency from './pages/Emergency'
 import Records from './pages/Records'
 import Certifications from './pages/Certifications'
 
@@ -19,7 +20,8 @@ function App() {
           mode='wait'>
             <Routes>
               <Route path="/" exact element={<Home />} />
-              <Route path="/discussion" exact element={<Discussion />} />
+              <Route path="/post" exact element={<Post />} />
+              <Route path="/emergency" exact element={<Emergency />} />
               <Route path="/records" exact element={<Records />} />
               <Route path="/certifications" exact element={<Certifications />} />
             </Routes>
