@@ -1,6 +1,6 @@
 import React from 'react'
 import red from '../videos/Red.mp4'
-import {framer, motion} from 'framer-motion'
+import {motion} from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 
 const Home = () => {
@@ -10,9 +10,9 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{duration: 1.5}}>
-    <div className=''>
+    <video src={red} autoPlay loop className='absolute z-30 w-auto min-w-full min-h-full max-w-none'/>
 
- 
+    <div className=''>
       <div className='flex flex-col justify-center items-center h-full text-center font-mono'>
         <h1 className='z-30 pt-10 px-20 text-9xl text-white bg-opacity-50 rounded-xl mt-40 pb-10'><b>HEALTH HUB</b></h1>
         <div className='z-30 mt-10 text-3xl text-white text-center py-10'>
