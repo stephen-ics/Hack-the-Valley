@@ -11,7 +11,7 @@ const Post = () => {
   const [showCertifications, setShowCertifications] = useState(false);
 
   return (
-    <div>
+    <div className=''>
       <div className='flex justify-evenly mt-24 mb-24 text-white'>
         <button className='w-1/4 h-20 px-8 bg-red-800' onClick={() => {
           setShowRecords(true)
@@ -22,12 +22,12 @@ const Post = () => {
       </div>
       
     {showRecords &&  <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-center text-gray-700">Submit a Record</h1>
+          <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Record</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
               onSubmit={onSubmit}
           >
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Event</span>
                 </label>
@@ -39,7 +39,7 @@ const Post = () => {
                     required
                 />
             </fieldset>
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Date</span>
                 </label>
@@ -51,7 +51,7 @@ const Post = () => {
                     required
                 />
             </fieldset>
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Description</span>
                 </label>
@@ -73,12 +73,12 @@ const Post = () => {
     </div>}
 
     {showCertifications &&  <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-center text-gray-700">Submit a Certificate</h1>
+          <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Certificate</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
               onSubmit={onSubmit}
           >
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Name</span>
                 </label>
@@ -90,7 +90,7 @@ const Post = () => {
                     required
                 />
             </fieldset>
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Date</span>
                 </label>
@@ -102,7 +102,7 @@ const Post = () => {
                     required
                 />
             </fieldset>
-            <fieldset className="flex flex-col">
+            <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
                     <span className="label-text">Location</span>
                 </label>
