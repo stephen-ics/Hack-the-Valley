@@ -46,11 +46,11 @@ const Certifications = () => {
                 buttonPressed("Medication")}}>Medication
             </button>
         </div>
-        <div className='bg-black'>
+        <div className=''>
             {showVaccines &&  
             <div className=''>
                 <h1 className='text-5xl text-center font-bold'>Vaccines</h1>
-                <div className='flex'>
+                <div className='grid grid-cols-3'>
                     {certificationData && 
                     certificationData.map(certificate => (
                     <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
@@ -59,22 +59,20 @@ const Certifications = () => {
             </div>
             }
             {showImmunizations &&  
-            <div className='flex justify-center bg-blue-400'>
-                <div className='flex flex-col'>
-                    <h1 className='text-5xl text-center font-bold'>Immunizations</h1>
-                    <div className='flex flex-wrap'>
-                        {certificationData && 
-                        certificationData.map(certificate => (
-                            <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
-                        ))}
-                    </div>
+            <div className=''>   
+                <h1 className='text-5xl text-center font-bold'>Immunizations</h1>
+                <div className='grid grid-cols-3'>
+                    {certificationData && 
+                    certificationData.map(certificate => (
+                        <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
+                    ))}
                 </div>
             </div>
             }
             {showMedication &&  
             <div className='grid-cols-3'>
                 <h1 className='text-5xl text-center font-bold'>Medication</h1>
-                <div className='flex flex-wrap'>
+                <div className='grid grid-cols-3'>
                     {certificationData && 
                     certificationData.map(certificate => (
                     <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>

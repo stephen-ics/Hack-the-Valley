@@ -54,6 +54,29 @@ const links = [
 const Navbar = () => {
    const [showDropdown, setShowDropdown] = useState(false);
    const { pathname } = useLocation();
+   const [deso, setDeso] = useState();
+
+   const { loggedIn, setLoggedIn } = useUserAuth();
+
+   useEffect(() => {
+       const myDeso = new Deso(DesoConfig);
+       setDeso(myDeso);
+   }, []);
+
+   const login = async () => {
+       const response = await deso.identity.login("3");
+       response.key && setLoggedIn(true);
+   };
+
+   const logout = async () => {
+       const currentUser = deso.identity.getUser();
+       console.log("Logging out:", currentUser);
+       const response = await deso.identity.logout(
+           window.localStorage.getItem("deso_user_key")
+       );
+       console.log("logged out", response);
+       response && setLoggedIn(false);
+   };
 
  
    return (
@@ -88,6 +111,7 @@ const Navbar = () => {
                        )
                    }
                </div>
+               
            </div>
        </header>
    )
