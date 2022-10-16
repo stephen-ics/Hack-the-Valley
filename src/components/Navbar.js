@@ -86,7 +86,7 @@ const Navbar = () => {
                <div className="flex justify-between items-center">
                    <Link className="flex flex-row items-center gap-4 font-bold text-xl text-teal" to="/">
                        {/* <img src="" alt="Logo" width={29} height={42} /> */}
-                       <h2 className="text-2xl text-white font-mono">LOGO</h2>
+                       <h2 className="text-2xl text-white font-mono">emergenchain</h2>
                    </Link>
  
                    <button

@@ -17,8 +17,6 @@ const RecordSection = ({ title, date, expiry, location, img }) => {
       >
     
     <div className='flex justify-center px-40 py-6 pb-8 bg-red-300 border-red-300 border-2 b-solid my-8 rounded-xl shadow-2xl'>
-        <img className='rounded-xl w-96 h-96 object-cover' src={img} />
-       
         <div className='mt-4 flex flex-col justify-evenly'>
             <div>
                 <h1 className='text-3xl ml-10 text-black pb-5 pr-8'><b>{title}</b></h1>

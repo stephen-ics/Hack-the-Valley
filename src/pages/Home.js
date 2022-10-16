@@ -2,6 +2,7 @@ import React from 'react'
 import red from '../videos/R.mp4'
 import {motion} from 'framer-motion'
 import Typewriter from 'typewriter-effect'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -26,6 +27,7 @@ const Home = () => {
         />
         </div>
         {/* <h1 className='z-30 mt-10 text)-3xl text-white text-center'>a blockchain for health data</h1> */}
+        <Link to='/post'>
           <motion.button
             initial={{ opacity: 0.6 }}
             whileHover={{
@@ -34,8 +36,9 @@ const Home = () => {
             }}
             whileTap={{ scale: 0.9 }}
             whileInView={{ opacity: 1 }}
-          className=' px-20 mt-10 rounded-xl z-30 bg-black py-8 text-white text-xl'> Get Started 
-        </motion.button>
+            className=' px-20 mt-10 rounded-xl z-30 bg-black py-8 text-white text-xl'> Get Started 
+          </motion.button>
+        </Link>
       </div>
  
     </div>

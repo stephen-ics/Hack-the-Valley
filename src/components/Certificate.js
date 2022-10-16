@@ -4,8 +4,6 @@ import Health from '../images/health.jpeg'
 const Certificate = ({ title, date, expiry, location, img }) => {
   return (
     <div className='px-6 py-8 pb-8 bg-red-200 border-red-300 border-2 b-solid mx-24 my-8 rounded-xl shadow-2xl'>
-        <img className='rounded-xl w-96 h-96 object-cover' src={img} />
-       
         <div className='mt-6 flex flex-col justify-evenly'>
             <div>
                 <h1 className='text-3xl'><b>{title}</b></h1>
