@@ -15,7 +15,7 @@ const Home = () => {
 
     <div className=''>
       <div className='flex flex-col justify-center items-center h-full text-center font-mono'>
-        <h1 className='z-30 pt-10 px-20 text-9xl text-white bg-opacity-50 rounded-xl mt-40 pb-10'><b>HEALTH HUB</b></h1>
+        <h1 className='z-30 pt-10 px-20 text-9xl text-white bg-opacity-50 rounded-xl mt-40 pb-10'><b>emergenchain</b></h1>
         <div className='z-30 mt-10 text-3xl text-white text-center py-10'>
           <Typewriter
           options={{
