@@ -3,6 +3,7 @@ import { useUserAuth } from "../lib/UserContext"
 
 // import Logo from "../public/logo-transparent.png";
  
+import Deso from '../images/deso.png'
 import { GoThreeBars } from "react-icons/go"
 import DesoConfig from "../lib/DesoConfig"
 
@@ -10,7 +11,8 @@ import {
    Link,
    useLocation
 } from "react-router-dom";
- 
+
+
 const links = [
     {
         name: "Post",
@@ -23,25 +25,20 @@ const links = [
         link: "/emergency",
         id: "emergency",
         priority: false
-     },
+        },
     {
-       name: "Records",
-       link: "/records",
-       id: "records",
-       priority: false
+        name: "Records",
+        link: "/records",
+        id: "records",
+        priority: false
     },
     {
-       name: "Certifications",
-       link: "/certifications",
-       id: "certifications",
-       priority: false
-    },
-    {
-        name: "Login",
-        link: "/login",
-        id: 'login',
+        name: "Certifications",
+        link: "/certifications",
+        id: "certifications",
         priority: false
     }
+]
 
    /*
    {
@@ -51,14 +48,14 @@ const links = [
        priority: true
    },
    */
-];
+
  
 const Navbar = () => {
    const [showDropdown, setShowDropdown] = useState(false);
    const { pathname } = useLocation();
    const [deso, setDeso] = useState();
 
-   const { loggedIn, setLoggedIn } = useUserAuth();
+   const [loggedIn, setLoggedIn] = useState(false)
 
 
    const login = async () => {
@@ -76,6 +73,11 @@ const Navbar = () => {
        response && setLoggedIn(false);
    };
 
+   const handleClick = () => {
+       setLoggedIn(!loggedIn)
+   }
+
+   
  
    return (
     //{pathname ? opacity:0 : opacity:1}
@@ -101,13 +103,37 @@ const Navbar = () => {
                </div>
  
                <div className={`${showDropdown ? "flex" : "hidden"} lg:flex flex-col lg:flex-row lg:ml-auto mt-3 lg:mt-0`} data-test-id="navbar">
-                   {
-                       links.map(({ name, link, priority, id }) =>
-                           <Link key={name} className={`${priority ? "text-purple-900 hover:bg-purple-900 hover:text-white text-center border border-solid border-purple-900 mt-1 lg:mt-0 lg:ml-1" : "text-white hover:bg-gray-200/25 hover:text-red-200"} p-2 lg:px-4 lg:mx-2 rounded duration-300 transition-colors ${pathname === name && "font-bold"}`} to={link}>
-                               {name}
-                           </Link>
-                       )
-                   }
+                    {loggedIn === true ? (
+
+                        <div>
+                            {links.map(({ name, link, priority, id }) => 
+                                <Link key={name} className={`${priority ? "text-purple-900 hover:bg-purple-900 hover:text-white text-center border border-solid border-purple-900 mt-1 lg:mt-0 lg:ml-1" : "text-white hover:bg-gray-200/25 hover:text-red-200"} p-2 lg:px-4 lg:mx-2 rounded duration-300 transition-colors ${pathname === name && "font-bold"}`} to={link}>
+                                    {name}
+                                </Link>
+                            )}
+                            
+                            <Link to='/'>
+                                <button
+                                    className="text-orange-900 hover:bg-orange-600 hover:text-orange-300 text-center border border-solid border-orange-900 mt-1 lg:mt-0 lg:ml-1 p-2 lg:px-4 lg:mx-2 rounded duration-300 transition-colors"
+                                    data-test-id={`navbar-logout`}
+                                    onClick={() => handleClick()}
+                                >
+                                    Log out
+                                </button>
+                            </Link>
+                        </div>
+  
+                    ) : (
+                        <Link to='/login'>
+                            <button
+                                className="text-orange-900 hover:bg-orange-600 hover:text-orange-300 text-center border border-solid border-orange-900 mt-1 lg:mt-0 lg:ml-1 p-2 lg:px-4 lg:mx-2 rounded duration-300 transition-colors"
+                                data-test-id={`navbar-login`}
+                                onClick={(e) => handleClick()}
+                            >
+                                Log in
+                            </button>
+                        </Link>
+                    )}
                </div>
                
            </div>
