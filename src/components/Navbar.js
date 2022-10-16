@@ -1,9 +1,11 @@
-import { useState } from "react";
- 
+import { useEffect, useState } from "react"
+import { useUserAuth } from "../lib/UserContext"
+
 // import Logo from "../public/logo-transparent.png";
  
 import { GoThreeBars } from "react-icons/go"
- 
+import DesoConfig from "../lib/DesoConfig"
+
 import {
    Link,
    useLocation
@@ -58,10 +60,6 @@ const Navbar = () => {
 
    const { loggedIn, setLoggedIn } = useUserAuth();
 
-   useEffect(() => {
-       const myDeso = new Deso(DesoConfig);
-       setDeso(myDeso);
-   }, []);
 
    const login = async () => {
        const response = await deso.identity.login("3");
