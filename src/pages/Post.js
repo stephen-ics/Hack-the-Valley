@@ -13,15 +13,15 @@ const Post = () => {
   return (
     <div className='bg-red-200 p-10'>
       <div className='flex justify-evenly mt-24 mb-24 text-white'>
-        <button className='w-1/4 h-20 px-8 bg-red-800' onClick={() => {
+        <button className='rounded-xl w-1/4 h-20 px-8 bg-red-800' onClick={() => {
           setShowRecords(true)
           setShowCertifications(false)}}>Records</button>
-        <button className='w-1/4 h-20 px-8 bg-red-800' onClick={() => {
+        <button className='rounded-xl w-1/4 h-20 px-8 bg-red-800' onClick={() => {
           setShowRecords(false) 
           setShowCertifications(true)}}>Certifications</button>
       </div>
       
-    {showRecords &&  <div className="flex flex-col">
+    {showRecords &&  <div className="flex flex-col bg-white p-10 rounded-xl">
           <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Record</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
@@ -29,7 +29,7 @@ const Post = () => {
           >
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Event</span>
+                    <span className="label-text text-2xl"><b>Event</b></span>
                 </label>
                 <input
                     type="text"
@@ -41,7 +41,7 @@ const Post = () => {
             </fieldset>
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Date</span>
+                    <span className="label-text text-2xl"><b>Date</b></span>
                 </label>
                 <input
                     type="text"
@@ -53,7 +53,7 @@ const Post = () => {
             </fieldset>
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Description</span>
+                    <span className="label-text text-2xl"><b>Description</b></span>
                 </label>
                 <input
                     type="text"
@@ -72,7 +72,7 @@ const Post = () => {
           </form>  
     </div>}
 
-    {showCertifications &&  <div className="flex flex-col">
+    {showCertifications &&  <div className="flex flex-col bg-white p-10 rounded-xl">
           <h1 className="text-5xl text-red-900 font-bold text-center">Submit a Certificate</h1>
           <form
               className="flex flex-col gap-2 self-center mt-4 w-full p-16 pt-4 xl:w-5/6"
@@ -80,7 +80,7 @@ const Post = () => {
           >
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Name</span>
+                    <span className="label-text text-2xl"><b>Name</b></span>
                 </label>
                 <input
                     type="text"
@@ -92,7 +92,7 @@ const Post = () => {
             </fieldset>
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Date</span>
+                    <span className="label-text text-2xl"><b>Date</b></span>
                 </label>
                 <input
                     type="text"
@@ -104,7 +104,7 @@ const Post = () => {
             </fieldset>
             <fieldset className="flex flex-col mb-10">
                 <label className="label mb-2">
-                    <span className="label-text">Location</span>
+                    <span className="label-text text-2xl"><b>Location</b></span>
                 </label>
                 <input
                     type="text"
