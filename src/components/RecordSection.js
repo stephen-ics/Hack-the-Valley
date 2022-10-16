@@ -3,7 +3,7 @@ import {useRef} from 'react'
 import Health from '../images/health.jpeg'
 import {useInView} from 'framer-motion'
 
-const Records = ({ title, date, expiry, location, img }) => {
+const RecordSection = ({ title, date, expiry, location, img }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -16,7 +16,7 @@ const Records = ({ title, date, expiry, location, img }) => {
         }}
       >
     
-    <div className='ml-80 flex grid-cols-3 justify-center px-6 py-6 pb-8 bg-red-300 border-red-300 border-2 b-solid mx-16 my-8 rounded-xl shadow-2xl'>
+    <div className='flex justify-center px-40 py-6 pb-8 bg-red-300 border-red-300 border-2 b-solid my-8 rounded-xl shadow-2xl'>
         <img className='rounded-xl w-96 h-96 object-cover' src={img} />
        
         <div className='mt-4 flex flex-col justify-evenly'>
@@ -35,4 +35,4 @@ const Records = ({ title, date, expiry, location, img }) => {
   )
 }
 
-export default Records
+export default RecordSection
