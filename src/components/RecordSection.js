@@ -3,7 +3,7 @@ import {useRef} from 'react'
 import Health from '../images/health.jpeg'
 import {useInView} from 'framer-motion'
 
-const Certificate = ({ title, date, expiry, location, img }) => {
+const Records = ({ title, date, expiry, location, img }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -35,4 +35,4 @@ const Certificate = ({ title, date, expiry, location, img }) => {
   )
 }
 
-export default Certificate
+export default Records

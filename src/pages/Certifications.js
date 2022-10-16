@@ -8,18 +8,21 @@ const Certifications = () => {
     const [showImmunizations, setShowImmunizations] = useState(false);
     const [showMedication, setShowMedication] = useState(false);
 
-    const [certificationOption, setCertificationOption] = useState(null);
+    const [certificationOption, setCertificationOption] = useState("Vaccine");
     const [certificationData, setCertificationData] = useState(null);
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/VaccineCertificates`)
-            .then(res => {
-            return res.json();
-            })
-            .then(data => {
-            setCertificationData(data);
-            });
-        }, []);
+    function buttonPressed(option){
+        console.log(option)
+        fetch(`http://localhost:3000/${option}Certificates`)
+        .then(res => {
+        return res.json();
+        })
+        .then(data => {
+        setCertificationData(data);
+        });
+    };
+
+
   
   return (
     <div className='flex flex-col justify-center text-red-900'>
@@ -28,17 +31,20 @@ const Certifications = () => {
             <button className='w-1/4 h-20 px-8 bg-red-800 font-bold' onClick={() => {
                 setShowVaccines(true)
                 setShowImmunizations(false)
-                setShowMedication(false)}}>Vaccines
+                setShowMedication(false)
+                buttonPressed("Vaccine")}}>Vaccines
             </button>
             <button className='w-1/4 h-20 px-8 bg-red-800 font-bold' onClick={() => {
                 setShowVaccines(false)
                 setShowImmunizations(true)
-                setShowMedication(false)}}>Immunizations
+                setShowMedication(false)
+                buttonPressed("Immunization")}}>Immunizations
             </button>
             <button className='w-1/4 h-20 px-8 bg-red-800 font-bold' onClick={() => {
                 setShowVaccines(false)
                 setShowImmunizations(false)
-                setShowMedication(true)}}>Medication
+                setShowMedication(true)
+                buttonPressed("Medication")}}>Medication
             </button>
         </div>
         <div className='flex justify-center'>
@@ -46,31 +52,34 @@ const Certifications = () => {
             <div>
                 <h1 className='text-5xl text-center font-bold'>Vaccines</h1>
                 <div className='flex flex-wrap'>
-                    {certificationData.map(certificate => (
-                        <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
+                    {certificationData && 
+                    certificationData.map(certificate => (
+                    <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
                     ))}
                 </div>
                 </div>
             }
             {showImmunizations &&  
-                <div>
-                    <h1 className='text-5xl text-center font-bold'>Immunizations</h1>
-                    <div className='flex flex-wrap'>
-                        {certificationData.map(certificate => (
-                            <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
-                        ))}
-                    </div>
+            <div>
+                <h1 className='text-5xl text-center font-bold'>Immunizations</h1>
+                <div className='flex flex-wrap'>
+                    {certificationData && 
+                    certificationData.map(certificate => (
+                        <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
+                    ))}
+                </div>
                 </div>
             }
             {showMedication &&  
             <div>
-                <h1 className='text-5xl text-center font-bold'>Medications</h1>
+                <h1 className='text-5xl text-center font-bold'>Medication</h1>
                 <div className='flex flex-wrap'>
-                    {certificationData.map(certificate => (
-                        <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
+                    {certificationData && 
+                    certificationData.map(certificate => (
+                    <Certificate title={certificate.title} date={certificate.date} expiry={certificate.expiry} location={certificate.location} img={certificate.image}/>
                     ))}
                 </div>
-            </div>
+                </div>
             }
         </div>
     </div>
